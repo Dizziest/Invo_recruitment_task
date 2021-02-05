@@ -24,8 +24,7 @@ class fatsProgressBar extends StatelessWidget {
               fontFamily: 'Quicksand',
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
-              color: Color(0xff999999)
-          ),
+              color: Color(0xff999999)),
         ),
         SizedBox(height: 15.0),
         Text(
@@ -41,7 +40,7 @@ class fatsProgressBar extends StatelessWidget {
           padding: EdgeInsets.only(left: 5, right: 10),
           width: 90.0,
           lineHeight: 8.0,
-          percent: fats/fatsGoal,
+          percent: fats / fatsGoal,
           progressColor: Color(0xFFF6BF27),
         ),
       ],
@@ -72,8 +71,7 @@ class proteinsProgressBar extends StatelessWidget {
               fontFamily: 'Quicksand',
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
-              color: Color(0xff999999)
-          ),
+              color: Color(0xff999999)),
         ),
         SizedBox(height: 15.0),
         Text(
@@ -89,7 +87,7 @@ class proteinsProgressBar extends StatelessWidget {
           padding: EdgeInsets.only(left: 5, right: 10),
           width: 90.0,
           lineHeight: 8.0,
-          percent: proteins/proteinsGoal,
+          percent: proteins / proteinsGoal,
           progressColor: Color(0xFF609EEE),
         ),
       ],
@@ -120,8 +118,7 @@ class carbohydratesProgressBar extends StatelessWidget {
               fontFamily: 'Quicksand',
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
-              color: Color(0xff999999)
-          ),
+              color: Color(0xff999999)),
         ),
         SizedBox(height: 15.0),
         Text(
@@ -137,11 +134,10 @@ class carbohydratesProgressBar extends StatelessWidget {
           padding: EdgeInsets.only(left: 5, right: 10),
           width: 90,
           lineHeight: 8.0,
-          percent: carbohydrates/carbohydratesGoal,
+          percent: carbohydrates / carbohydratesGoal,
           progressColor: Color(0xFF48B2A1),
         ),
       ],
-
     );
   }
 }

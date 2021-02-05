@@ -140,31 +140,29 @@ class _DetailPageState extends State<DetailPage> {
                 _alergensList(alergens: alergens, alergenImages: alergenImages),
                 SizedBox(height: 40.0),
                 ElevatedButton(
-                    onPressed: (){},
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text(
-                            'Kolejny posiłek',
-                            style: TextStyle(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          'Kolejny posiłek',
+                          style: TextStyle(
                               fontFamily: 'Quicksand',
                               fontSize: 16.0,
                               fontWeight: FontWeight.w500,
-                              color: Colors.white
-                            ),
-                          ),
+                              color: Colors.white),
                         ),
-                      ],
-                    ),
-                    style: ElevatedButton.styleFrom(
+                      ),
+                    ],
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      elevation: 0.0,
                       primary: Color(0xfff94f36),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(7.0)
-                      )
-                    ),
+                          borderRadius: BorderRadius.circular(7.0))),
                 )
               ],
             )),
