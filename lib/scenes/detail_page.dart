@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import './widgets/linear_progress_bars.dart';
+import 'package:invorecruitmenttask/models/alergen.dart';
+import '../widgets/alergens_list.dart';
+import '../widgets/linear_progress_bar_with_column.dart';
 
 class DetailPage extends StatefulWidget {
   DetailPage({Key key, this.title}) : super(key: key);
@@ -18,15 +20,10 @@ class _DetailPageState extends State<DetailPage> {
   double fats = 38.8;
   double fatsGoal = 50.0;
 
-  final List<String> alergens = <String>[
-    'Skorupiaki',
-    'Orzeszki ziemne',
-    'Mleko'
-  ];
-  final List<String> alergenImages = <String>[
-    'assets/images/crab.png',
-    'assets/images/peanut.png',
-    'assets/images/milk.png'
+  final List<Alergen> alergens = <Alergen>[
+    Alergen('Skorupiaki', 'assets/images/crab.png'),
+    Alergen('Orzeszki ziemne', 'assets/images/peanut.png'),
+    Alergen('Mleko', 'assets/images/milk.png')
   ];
 
   @override
@@ -115,12 +112,27 @@ class _DetailPageState extends State<DetailPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    carbohydratesProgressBar(
-                        carbohydrates: carbohydrates,
-                        carbohydratesGoal: carbohydratesGoal),
-                    proteinsProgressBar(
-                        proteins: proteins, proteinsGoal: proteinsGoal),
-                    fatsProgressBar(fats: fats, fatsGoal: fatsGoal)
+                    linearProgressBarWithColumn(
+                        current: 81.1,
+                        goal: 200,
+                        name: 'Węglowodany',
+                        image: 'assets/images/starch.png',
+                        progressColor: 0xff48b2a1
+                    ),
+                    linearProgressBarWithColumn(
+                        current: 15.0,
+                        goal: 100,
+                        name: 'Białko',
+                        image: 'assets/images/fish-2.png',
+                        progressColor: 0xff609eee
+                    ),
+                    linearProgressBarWithColumn(
+                        current: 38.8,
+                        goal: 50,
+                        name: 'Tłuszcze',
+                        image: 'assets/images/drop.png',
+                        progressColor: 0xfff6bf27
+                    ),
                   ],
                 ),
                 SizedBox(height: 50.0),
@@ -137,7 +149,7 @@ class _DetailPageState extends State<DetailPage> {
                   ],
                 ),
                 SizedBox(height: 20.0),
-                _alergensList(alergens: alergens, alergenImages: alergenImages),
+                alergensList(alergenList: alergens),
                 SizedBox(height: 40.0),
                 ElevatedButton(
                   onPressed: () {},
@@ -171,98 +183,3 @@ class _DetailPageState extends State<DetailPage> {
   }
 }
 
-class _alergensList extends StatelessWidget {
-  const _alergensList({
-    Key key,
-    @required this.alergens,
-    @required this.alergenImages,
-  }) : super(key: key);
-
-  final List<String> alergens;
-  final List<String> alergenImages;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        padding: EdgeInsets.zero,
-        shrinkWrap: true,
-        physics: ScrollPhysics(),
-        itemCount: alergens.length,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return Container(
-              decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xfff3f3f3), width: 1.0),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15))),
-              height: 65,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      alergens[index],
-                      style: TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    Image.asset(alergenImages[index])
-                  ],
-                ),
-              ),
-            );
-          } else if (index == alergens.length - 1) {
-            return Container(
-              decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xfff3f3f3), width: 1.0),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15))),
-              height: 65,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      alergens[index],
-                      style: TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    Image.asset(alergenImages[index])
-                  ],
-                ),
-              ),
-            );
-          } else {
-            return Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Color(0xfff3f3f3), width: 1.0),
-              ),
-              height: 65,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      alergens[index],
-                      style: TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    Image.asset(alergenImages[index])
-                  ],
-                ),
-              ),
-            );
-          }
-        });
-  }
-}
