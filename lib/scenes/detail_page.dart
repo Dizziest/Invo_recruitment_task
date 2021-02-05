@@ -97,7 +97,7 @@ class _DetailPageState extends State<DetailPage> {
                             padding: const EdgeInsets.all(22.0),
                             child: Column(
                               children: [
-                                Image.asset('assets/images/calories@2x.png'),
+                                Image.asset('assets/images/calories.png'),
                                 SizedBox(height: 5.0),
                                 Text(
                                   '$kcal kcal',

@@ -22,7 +22,7 @@ class circularCaloriesBar extends StatelessWidget {
       center: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/images/calories@2x.png'),
+          Image.asset('assets/images/calories.png'),
           SizedBox(height: 5.0),
           Text(
             "$caloriesDone kcal",
