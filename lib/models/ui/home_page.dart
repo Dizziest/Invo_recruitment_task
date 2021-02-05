@@ -48,27 +48,14 @@ class _HomePageState extends State<HomePage> {
                       fit: FlexFit.tight,
                       child: SizedBox()
                   ),
-                  /*ElevatedButton(
+                  IconButton(
+                      icon: Icon(Icons.arrow_forward_ios_rounded),
                       onPressed: (){
                         Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => DetailPage())
                         );
-                      },
-                      child: Image.asset('assets/images/arrow_right.png'),
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        primary: Colors.white,
-                      ),
-                  ),*/
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => DetailPage())
-                      );
-                    },
-                    child: Image.asset('assets/images/arrow_right.png'),
+                      }
                   ),
                 ],
               ),
