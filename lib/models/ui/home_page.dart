@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                       fit: FlexFit.tight,
                       child: SizedBox()
                   ),
-                  ElevatedButton(
+                  /*ElevatedButton(
                       onPressed: (){
                         Navigator.push(
                             context,
@@ -56,9 +56,12 @@ class _HomePageState extends State<HomePage> {
                         );
                       },
                       child: Image.asset('assets/images/arrow_right.png'),
-                      back
-                  ),
-                  /*GestureDetector(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        primary: Colors.white,
+                      ),
+                  ),*/
+                  GestureDetector(
                     onTap: () {
                       Navigator.push(
                           context,
@@ -66,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                     child: Image.asset('assets/images/arrow_right.png'),
-                  ),*/
+                  ),
                 ],
               ),
               SizedBox(height: 60.0),
