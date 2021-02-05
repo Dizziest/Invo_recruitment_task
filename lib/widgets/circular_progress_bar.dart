@@ -39,7 +39,8 @@ class circularCaloriesBar extends StatelessWidget {
                 fontFamily: 'Quicksand',
                 fontWeight: FontWeight.w500,
                 fontSize: 14.0,
-                color: Color(0xff999999)),
+                color: Color(0xff999999)
+            ),
           ),
         ],
       ),

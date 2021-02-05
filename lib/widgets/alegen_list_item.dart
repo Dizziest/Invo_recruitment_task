@@ -15,7 +15,12 @@ class alergenListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Color(0xfff3f3f3), width: 1.0),
+        border: Border(
+            bottom: BorderSide(
+                color: Color(0xfff3f3f3),
+                width: 1.0
+            ),
+        ),
       ),
       height: 65,
       child: Padding(
@@ -28,7 +33,8 @@ class alergenListItem extends StatelessWidget {
               style: TextStyle(
                   fontFamily: 'Quicksand',
                   fontSize: 16.0,
-                  fontWeight: FontWeight.w400),
+                  fontWeight: FontWeight.w400
+              ),
             ),
             Image.asset(alergenList[index].image)
           ],

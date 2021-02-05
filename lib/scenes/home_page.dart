@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(
                                 fontFamily: 'Quicksand',
                                 fontSize: 20.0,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w700
                               )
                           ),
                           Flexible(
@@ -75,22 +75,22 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           linearProgressBarWithColumn(
-                              current: 81.1,
-                              goal: 200,
+                              current: carbohydrates,
+                              goal: carbohydratesGoal,
                               name: 'Węglowodany',
                               image: 'assets/images/starch.png',
                               progressColor: 0xff48b2a1
                           ),
                           linearProgressBarWithColumn(
-                              current: 15.0,
-                              goal: 100,
+                              current: proteins,
+                              goal: proteinsGoal,
                               name: 'Białko',
                               image: 'assets/images/fish-2.png',
                               progressColor: 0xff609eee
                           ),
                           linearProgressBarWithColumn(
-                              current: 38.8,
-                              goal: 50,
+                              current: fats,
+                              goal: fatsGoal,
                               name: 'Tłuszcze',
                               image: 'assets/images/drop.png',
                               progressColor: 0xfff6bf27

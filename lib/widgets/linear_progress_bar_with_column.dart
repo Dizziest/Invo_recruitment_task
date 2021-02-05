@@ -30,7 +30,8 @@ class linearProgressBarWithColumn extends StatelessWidget {
               fontFamily: 'Quicksand',
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
-              color: Color(0xff999999)),
+              color: Color(0xff999999)
+          ),
         ),
         SizedBox(height: 15.0),
         Text(
@@ -38,7 +39,7 @@ class linearProgressBarWithColumn extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Quicksand',
             fontSize: 20.0,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w700
           ),
         ),
         SizedBox(height: 15.0),
