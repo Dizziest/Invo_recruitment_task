@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invorecruitmenttask/models/alergen.dart';
-import 'package:invorecruitmenttask/widgets/alegen_list_item.dart';
+import 'package:invorecruitmenttask/widgets/alergen_list_item.dart';
 
 class alergensList extends StatelessWidget {
   const alergensList({
