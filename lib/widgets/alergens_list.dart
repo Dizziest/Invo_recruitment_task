@@ -28,8 +28,7 @@ class alergensList extends StatelessWidget {
             itemCount: alergenList.length,
             itemBuilder: (context, index) {
               return alergenListItem(
-                  alergenList: alergenList,
-                  index: index
+                  alergen: alergenList[index]
               );
             }
         ),

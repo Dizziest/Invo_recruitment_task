@@ -4,12 +4,10 @@ import 'package:invorecruitmenttask/models/alergen.dart';
 class alergenListItem extends StatelessWidget {
   const alergenListItem({
     Key key,
-    @required this.alergenList,
-    @required this.index,
+    @required this.alergen,
   }) : super(key: key);
 
-  final List<Alergen> alergenList;
-  final int index;
+  final Alergen alergen;
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +27,14 @@ class alergenListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              alergenList[index].name,
+              alergen.name,
               style: TextStyle(
                   fontFamily: 'Quicksand',
                   fontSize: 16.0,
                   fontWeight: FontWeight.w400
               ),
             ),
-            Image.asset(alergenList[index].image)
+            Image.asset(alergen.image)
           ],
         ),
       ),

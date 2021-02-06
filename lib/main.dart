@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:invorecruitmenttask/bloc/simple_bloc_observer.dart';
+import 'package:invorecruitmenttask/repository/fake_api_client.dart';
+import 'package:invorecruitmenttask/repository/makro_repository.dart';
 
+import 'bloc/makro/makro_bloc.dart';
 import 'scenes/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  Bloc.observer = SimpleBlocObserver();
+  final MakroRepository makroRepository = MakroRepository(fakeApiClient: FakeApiClient());
+  runApp(MyApp(makroRepository: makroRepository));
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  final MakroRepository makroRepository;
+  MyApp({Key key, @required this.makroRepository}) : assert(makroRepository != null), super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +25,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(title: 'Task'),
+      home: BlocProvider(
+        create: (context) => MakroBloc(makroRepository: makroRepository),
+        child: HomePage(title: 'Task'),
+      )
     );
   }
 }
