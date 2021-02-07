@@ -18,6 +18,15 @@ class LinearProgressBarWithColumn extends StatelessWidget {
   final double goal;
   final Color progressColor;
 
+  double calculatePercent(double current, double goal){
+    double percent = current / goal;
+    if(percent > 1){
+      return 1;
+    } else {
+      return percent;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,7 +57,7 @@ class LinearProgressBarWithColumn extends StatelessWidget {
           padding: EdgeInsets.only(left: 5, right: 10),
           width: 90.0,
           lineHeight: 8.0,
-          percent: current / goal,
+          percent: calculatePercent(current, goal),
           progressColor: progressColor,
         ),
       ],

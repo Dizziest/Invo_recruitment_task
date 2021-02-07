@@ -12,6 +12,15 @@ class CircularCaloriesBar extends StatelessWidget {
   final int caloriesDone;
   final int caloriesGoal;
 
+  double calculatePercent(int current, int goal){
+    double percent = current / goal;
+    if(percent > 1){
+      return 1;
+    } else {
+      return percent;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return CircularPercentIndicator(
@@ -19,7 +28,7 @@ class CircularCaloriesBar extends StatelessWidget {
       animation: true,
       animationDuration: 1200,
       lineWidth: 8.0,
-      percent: caloriesDone / caloriesGoal,
+      percent: calculatePercent(caloriesDone, caloriesGoal),
       center: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

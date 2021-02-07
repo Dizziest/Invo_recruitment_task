@@ -22,7 +22,7 @@ class _MacroWidgetState extends State<MacroWidget> {
   double carbohydrates = 0;
   double proteins = 0;
   double fats = 0;
-  int kcal = 220;
+  int kcal = 0;
 
   void calculateNutrients(){
     for(Meal meal in widget.macro.meals){
