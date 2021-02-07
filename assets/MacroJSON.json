@@ -1,0 +1,35 @@
+{
+  "id":1,
+  "date":"06.02.2021",
+  "kcalGoal":2000,
+  "carbohydratesGoal":200.0,
+  "proteinsGoal":100.0,
+  "fatsGoal":50.0,
+  "meals":[
+    {
+      "title":"II Śniadanie",
+      "name":"ze szpinakiem, twarożkiem z suszonymi pomidorami, oliwkami i rzodkiewką",
+      "kcal":400,
+      "carbohydrates":81.1,
+      "carbohydratesGoal":200.0,
+      "proteins":15.0,
+      "proteinsGoal":50.0,
+      "fats":38.8,
+      "fatsGoal":50.0,
+      "alergens":[
+        {
+          "name":"Skorupiaki",
+          "image":"assets/images/crab.png"
+        },
+        {
+          "name":"Orzeszki ziemne",
+          "image":"assets/images/peanut.png"
+        },
+        {
+          "name":"Mleko",
+          "image":"assets/images/milk.png"
+        }
+      ]
+    }
+  ]
+}

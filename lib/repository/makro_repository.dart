@@ -7,11 +7,7 @@ class MakroRepository{
 
   MakroRepository({@required this.fakeApiClient}) : assert(fakeApiClient != null);
 
-  Makro getMakro(int userId, String date){
-    return fakeApiClient.getMakro(userId, date);
-  }
-
-  List<Meal> getMeals(int makroId){
-    return fakeApiClient.getMeals(makroId);
+  Future<Makro> getMakro(){
+    return fakeApiClient.getMakro();
   }
 }

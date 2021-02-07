@@ -13,4 +13,23 @@ class Meal{
   final List<Alergen> alergens;
 
   Meal(this.title, this.name, this.kcal, this.carbohydrates, this.carbohydratesGoal, this.proteins, this.proteinsGoal, this.fats, this.fatsGoal, this.alergens);
+
+  factory Meal.fromJson(Map<String, dynamic> json){
+    var list = json['alergens'] as List;
+    List<Alergen> alergenList = list.map((i) => Alergen.fromJson(i)).toList();
+
+    return Meal(
+        json['title'],
+        json['name'],
+        json['kcal'],
+        json['carbohydrates'],
+        json['carbohydratesGoal'],
+        json['proteins'],
+        json['proteinsGoal'],
+        json['fats'],
+        json['fatsGoal'],
+        alergenList
+    );
+  }
+
 }

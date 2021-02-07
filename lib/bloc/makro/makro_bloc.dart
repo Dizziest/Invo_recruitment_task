@@ -16,7 +16,7 @@ class MakroBloc extends Bloc<MakroEvent, MakroState> {
     if (event is FetchMakroEvent){
       yield MakroLoading();
       try{
-        final Makro makro = await makroRepository.getMakro(event.id, event.date);
+        final Makro makro = await makroRepository.getMakro();
         yield MakroLoaded(makro: makro);
       } catch(error) {
         print(error);

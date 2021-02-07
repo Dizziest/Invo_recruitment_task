@@ -7,13 +7,27 @@ class Makro extends Equatable{
   final int id;
   final String date;
   final int kcalGoal;
-  final double proteinsGoal;
   final double carbohydratesGoal;
+  final double proteinsGoal;
   final double fatsGoal;
+  final List<Meal> meals;
 
-  List<Meal> meals;
+  Makro(this.id ,this.date, this.kcalGoal, this.proteinsGoal, this.carbohydratesGoal, this.fatsGoal, this.meals);
 
-  Makro(this.id ,this.date, this.kcalGoal, this.proteinsGoal, this.carbohydratesGoal, this.fatsGoal);
+  factory Makro.fromJson(Map<String, dynamic> json){
+    var list = json['meals'] as List;
+    List<Meal> mealsList = list.map((i) => Meal.fromJson(i)).toList();
+
+    return Makro(
+        json['id'],
+        json['date'],
+        json['kcalGoal'],
+        json['carbohydratesGoal'],
+        json['proteinsGoal'],
+        json['fatsGoal'],
+        mealsList
+    );
+  }
 
   @override
   List<Object> get props => [
