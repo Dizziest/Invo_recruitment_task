@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:invorecruitmenttask/constants/app_colors.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-class linearProgressBarWithColumn extends StatelessWidget {
-  const linearProgressBarWithColumn({
+class LinearProgressBarWithColumn extends StatelessWidget {
+  const LinearProgressBarWithColumn({
     Key key,
     @required this.current,
     @required this.goal,
@@ -15,7 +16,7 @@ class linearProgressBarWithColumn extends StatelessWidget {
   final String image;
   final double current;
   final double goal;
-  final int progressColor;
+  final Color progressColor;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class linearProgressBarWithColumn extends StatelessWidget {
               fontFamily: 'Quicksand',
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
-              color: Color(0xff999999)
+              color: AppColors.greyText
           ),
         ),
         SizedBox(height: 15.0),
@@ -48,7 +49,7 @@ class linearProgressBarWithColumn extends StatelessWidget {
           width: 90.0,
           lineHeight: 8.0,
           percent: current / goal,
-          progressColor: Color(progressColor),
+          progressColor: progressColor,
         ),
       ],
     );

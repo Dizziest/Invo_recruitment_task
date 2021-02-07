@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:invorecruitmenttask/constants/app_colors.dart';
+import 'package:invorecruitmenttask/constants/strings.dart';
 import 'package:invorecruitmenttask/models/models.dart';
 import '../widgets/alergens_list.dart';
 import '../widgets/linear_progress_bar_with_column.dart';
@@ -15,37 +17,21 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
 
-  double carbohydrates = 0;
-  double proteins = 0;
-  double fats = 0;
-
-  List<double> calculateNutriens(){
-    for(Meal meal in widget.makro.meals){
-      carbohydrates = carbohydrates + meal.carbohydrates;
-      proteins = proteins + meal.proteins;
-      fats = fats + meal.proteins;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        resizeToAvoidBottomInset: false,
-        body: displayMeal(
-          meal: widget.makro.meals[0],
-        ),
+          backgroundColor: Colors.white,
+          resizeToAvoidBottomInset: false,
+          body: MealWidget(
+            meal: widget.makro.meals[0],
+          ),
     );
   }
 
-  @override
-  void initState() {
-    calculateNutriens();
-  }
 }
 
-class displayMeal extends StatelessWidget {
-  const displayMeal({
+class MealWidget extends StatelessWidget {
+  const MealWidget({
     Key key,
     @required this.meal
   }) : super(key: key);
@@ -94,8 +80,8 @@ class displayMeal extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      'Składniki Makro',
+                    const Text(
+                      Strings.skladnikiMakro,
                       style: TextStyle(
                         fontFamily: 'Quicksand',
                         fontSize: 16.0,
@@ -107,7 +93,7 @@ class displayMeal extends StatelessWidget {
                 SizedBox(height: 20.0),
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xfff3f3f3), width: 1.0),
+                      border: Border.all(color: AppColors.greyBorder, width: 1.0),
                       borderRadius: BorderRadius.all(Radius.circular(20))
                   ),
                   child: Row(
@@ -138,26 +124,26 @@ class displayMeal extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    linearProgressBarWithColumn(
+                    LinearProgressBarWithColumn(
                         current: meal.carbohydrates,
                         goal: meal.carbohydratesGoal,
-                        name: 'Węglowodany',
+                        name: Strings.weglowodany,
                         image: 'assets/images/starch.png',
-                        progressColor: 0xff48b2a1
+                        progressColor: AppColors.carbohydratesProgressColor
                     ),
-                    linearProgressBarWithColumn(
+                    LinearProgressBarWithColumn(
                         current: meal.proteins,
                         goal: meal.proteinsGoal,
-                        name: 'Białko',
+                        name: Strings.bialko,
                         image: 'assets/images/fish-2.png',
-                        progressColor: 0xff609eee
+                        progressColor: AppColors.proteinsProgressColor
                     ),
-                    linearProgressBarWithColumn(
+                    LinearProgressBarWithColumn(
                         current: meal.fats,
                         goal: meal.fatsGoal,
-                        name: 'Tłuszcze',
+                        name: Strings.tluszcze,
                         image: 'assets/images/drop.png',
-                        progressColor: 0xfff6bf27
+                        progressColor: AppColors.fatsProgressColor
                     ),
                   ],
                 ),
@@ -165,8 +151,8 @@ class displayMeal extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      'Alergeny',
+                    const Text(
+                      Strings.alergeny,
                       style: TextStyle(
                           fontFamily: 'Quicksand',
                           fontSize: 16.0,
@@ -176,7 +162,7 @@ class displayMeal extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20.0),
-                alergensList(alergenList: meal.alergens),
+                AlergensList(alergenList: meal.alergens),
                 SizedBox(height: 40.0),
                 ElevatedButton(
                   onPressed: () {},
@@ -186,8 +172,8 @@ class displayMeal extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(20.0),
-                        child: Text(
-                          'Kolejny posiłek',
+                        child: const Text(
+                          Strings.kolejnyPosilek,
                           style: TextStyle(
                               fontFamily: 'Quicksand',
                               fontSize: 16.0,
@@ -200,7 +186,7 @@ class displayMeal extends StatelessWidget {
                   ),
                   style: ElevatedButton.styleFrom(
                       elevation: 0.0,
-                      primary: Color(0xfff94f36),
+                      primary: AppColors.nextMealButtonColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(7.0))
                   ),

@@ -6,15 +6,10 @@ abstract class MakroEvent extends Equatable {
 }
 
 class FetchMakroEvent extends MakroEvent {
-  final int id;
-  final String date;
 
-  FetchMakroEvent({@required this.id, @required this.date}) : assert(id != null && date != null);
+  FetchMakroEvent();
 
   @override
-  List<Object> get props => [
-    id,
-    date
-  ];
+  List<Object> get props => [];
 
 }

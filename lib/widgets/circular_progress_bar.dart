@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:invorecruitmenttask/constants/app_colors.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class circularCaloriesBar extends StatelessWidget {
-  const circularCaloriesBar({
+class CircularCaloriesBar extends StatelessWidget {
+  const CircularCaloriesBar({
     Key key,
     @required this.caloriesDone,
     @required this.caloriesGoal,
@@ -39,7 +40,7 @@ class circularCaloriesBar extends StatelessWidget {
                 fontFamily: 'Quicksand',
                 fontWeight: FontWeight.w500,
                 fontSize: 14.0,
-                color: Color(0xff999999)
+                color: AppColors.greyText
             ),
           ),
         ],

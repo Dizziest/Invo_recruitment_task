@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invorecruitmenttask/bloc/makro/bloc.dart';
+import 'package:invorecruitmenttask/constants/app_colors.dart';
+import 'package:invorecruitmenttask/constants/strings.dart';
 import 'package:invorecruitmenttask/models/models.dart';
 import '../widgets/linear_progress_bar_with_column.dart';
 import '../widgets/circular_progress_bar.dart';
@@ -40,23 +42,23 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  displayMakro(
-                    makro: makro,
+                  MakroWidget(
+                    makro: makro
                   ),
                 ],
               ),
             );
           }
           else if (state is MakroEmpty){
-            BlocProvider.of<MakroBloc>(context).add(FetchMakroEvent(id: 1, date: '06.02.2021'));
+            BlocProvider.of<MakroBloc>(context).add(FetchMakroEvent());
             return Padding(
-              padding: EdgeInsets.zero,
+              padding: EdgeInsets.zero
             );
           }
           else {
             return Center(
-              child: Text(
-                'ERROR OCCURED'
+              child: const Text(
+                Strings.errorOccured
               ),
             );
           }
@@ -66,8 +68,8 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class displayMakro extends StatefulWidget {
-  const displayMakro({
+class MakroWidget extends StatefulWidget {
+  const MakroWidget({
     Key key,
     @required this.makro
   }) : super(key: key);
@@ -75,30 +77,27 @@ class displayMakro extends StatefulWidget {
   final Makro makro;
 
   @override
-  _displayMakroState createState() => _displayMakroState();
+  _MakroWidgetState createState() => _MakroWidgetState();
 }
 
-class _displayMakroState extends State<displayMakro> {
+class _MakroWidgetState extends State<MakroWidget> {
   double carbohydrates = 0;
   double proteins = 0;
   double fats = 0;
-  double kcal = 0;
+  int kcal = 220;
 
-  List<double> calculateNutriens(){
+  void calculateNutriens(){
     for(Meal meal in widget.makro.meals){
       carbohydrates = carbohydrates + meal.carbohydrates;
       proteins = proteins + meal.proteins;
       fats = fats + meal.fats;
       kcal = kcal + meal.kcal;
     }
-    print("carbo $carbohydrates carboGoal ${widget.makro.carbohydratesGoal}");
-    print("protein $proteins carboGoal ${widget.makro.proteinsGoal}");
-    print("fats $fats carboGoal ${widget.makro.fatsGoal}");
+
   }
 
-
   @override
-  void initState() {
+  void initState(){
     calculateNutriens();
   }
 
@@ -109,7 +108,7 @@ class _displayMakroState extends State<displayMakro> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => DetailPage(makro: widget.makro,)
+                builder: (context) => DetailPage(makro: widget.makro)
             )
         );
       },
@@ -124,7 +123,7 @@ class _displayMakroState extends State<displayMakro> {
             children: [
               Row(
                 children: [
-                  Text('Makro na dziś',
+                  const Text(Strings.makroNaDzis,
                       style: TextStyle(
                         fontFamily: 'Quicksand',
                         fontSize: 20.0,
@@ -139,34 +138,34 @@ class _displayMakroState extends State<displayMakro> {
                 ],
               ),
               SizedBox(height: 40.0),
-              circularCaloriesBar(
-                  caloriesDone: widget.makro.meals[0].kcal,
+              CircularCaloriesBar(
+                  caloriesDone: kcal,
                   caloriesGoal: widget.makro.kcalGoal
               ),
               SizedBox(height: 30.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  linearProgressBarWithColumn(
+                  LinearProgressBarWithColumn(
                       current: carbohydrates,
                       goal: widget.makro.carbohydratesGoal,
-                      name: 'Węglowodany',
+                      name: Strings.weglowodany,
                       image: 'assets/images/starch.png',
-                      progressColor: 0xff48b2a1
+                      progressColor: AppColors.carbohydratesProgressColor
                   ),
-                  linearProgressBarWithColumn(
+                  LinearProgressBarWithColumn(
                       current: proteins,
                       goal: widget.makro.proteinsGoal,
-                      name: 'Białko',
+                      name: Strings.bialko,
                       image: 'assets/images/fish-2.png',
-                      progressColor: 0xff609eee
+                      progressColor: AppColors.proteinsProgressColor
                   ),
-                  linearProgressBarWithColumn(
+                  LinearProgressBarWithColumn(
                       current: fats,
                       goal: widget.makro.fatsGoal,
-                      name: 'Tłuszcze',
+                      name: Strings.tluszcze,
                       image: 'assets/images/drop.png',
-                      progressColor: 0xfff6bf27
+                      progressColor: AppColors.fatsProgressColor
                   ),
                 ],
               )

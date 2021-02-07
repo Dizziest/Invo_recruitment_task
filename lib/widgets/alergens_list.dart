@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:invorecruitmenttask/constants/app_colors.dart';
 import 'package:invorecruitmenttask/models/alergen.dart';
 import 'package:invorecruitmenttask/widgets/alergen_list_item.dart';
 
-class alergensList extends StatelessWidget {
-  const alergensList({
+class AlergensList extends StatelessWidget {
+  const AlergensList({
     Key key,
     @required this.alergenList,
   }) : super(key: key);
@@ -17,7 +18,7 @@ class alergensList extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(
-            color: Color(0xfff3f3f3),
+            color: AppColors.greyBorder,
           ),
           borderRadius: BorderRadius.circular(15.0)
         ),
@@ -27,7 +28,7 @@ class alergensList extends StatelessWidget {
             physics: ScrollPhysics(),
             itemCount: alergenList.length,
             itemBuilder: (context, index) {
-              return alergenListItem(
+              return AlergenListItem(
                   alergen: alergenList[index]
               );
             }

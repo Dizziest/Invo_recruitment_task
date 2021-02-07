@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:invorecruitmenttask/constants/app_colors.dart';
 import 'package:invorecruitmenttask/models/alergen.dart';
 
-class alergenListItem extends StatelessWidget {
-  const alergenListItem({
+class AlergenListItem extends StatelessWidget {
+  const AlergenListItem({
     Key key,
     @required this.alergen,
   }) : super(key: key);
@@ -15,7 +16,7 @@ class alergenListItem extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
             bottom: BorderSide(
-                color: Color(0xfff3f3f3),
+                color: AppColors.greyBorder,
                 width: 1.0
             ),
         ),
