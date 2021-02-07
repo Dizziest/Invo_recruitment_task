@@ -6,6 +6,7 @@ import 'package:invorecruitmenttask/scenes/meals_page.dart';
 
 import 'circular_progress_bar.dart';
 import 'linear_progress_bar_with_column.dart';
+import 'nutrients_widget.dart';
 
 class MacroWidget extends StatefulWidget {
   const MacroWidget({
@@ -83,31 +84,13 @@ class _MacroWidgetState extends State<MacroWidget> {
                   caloriesGoal: widget.macro.kcalGoal
               ),
               SizedBox(height: 30.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  LinearProgressBarWithColumn(
-                      current: carbohydrates,
-                      goal: widget.macro.carbohydratesGoal,
-                      name: Strings.carbohydrates,
-                      image: 'assets/images/starch.png',
-                      progressColor: AppColors.carbohydratesProgressColor
-                  ),
-                  LinearProgressBarWithColumn(
-                      current: proteins,
-                      goal: widget.macro.proteinsGoal,
-                      name: Strings.proteins,
-                      image: 'assets/images/fish-2.png',
-                      progressColor: AppColors.proteinsProgressColor
-                  ),
-                  LinearProgressBarWithColumn(
-                      current: fats,
-                      goal: widget.macro.fatsGoal,
-                      name: Strings.fats,
-                      image: 'assets/images/drop.png',
-                      progressColor: AppColors.fatsProgressColor
-                  ),
-                ],
+              NutrientsWidget(
+                  carbohydrates: carbohydrates,
+                  carbohydratesGoal: widget.macro.carbohydratesGoal,
+                  proteins: proteins,
+                  proteinsGoal: widget.macro.proteinsGoal,
+                  fats: fats,
+                  fatsGoal: widget.macro.fatsGoal
               )
             ],
           ),
@@ -116,3 +99,4 @@ class _MacroWidgetState extends State<MacroWidget> {
     );
   }
 }
+

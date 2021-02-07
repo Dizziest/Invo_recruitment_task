@@ -32,14 +32,14 @@ class _HomePageState extends State<HomePage> {
             );
           }
           else if (state is MacroLoaded) {
-            final makro = state.macro;
+            final macro = state.macro;
             return Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   MacroWidget(
-                    macro: makro
+                    macro: macro
                   ),
                 ],
               ),
