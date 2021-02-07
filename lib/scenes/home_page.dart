@@ -91,6 +91,9 @@ class _displayMakroState extends State<displayMakro> {
       fats = fats + meal.fats;
       kcal = kcal + meal.kcal;
     }
+    print("carbo $carbohydrates carboGoal ${widget.makro.carbohydratesGoal}");
+    print("protein $proteins carboGoal ${widget.makro.proteinsGoal}");
+    print("fats $fats carboGoal ${widget.makro.fatsGoal}");
   }
 
 

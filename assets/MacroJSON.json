@@ -3,7 +3,7 @@
   "date":"06.02.2021",
   "kcalGoal":2000,
   "carbohydratesGoal":200.0,
-  "proteinsGoal":100.0,
+  "proteinsGoal":80.0,
   "fatsGoal":50.0,
   "meals":[
     {
@@ -13,7 +13,7 @@
       "carbohydrates":81.1,
       "carbohydratesGoal":200.0,
       "proteins":15.0,
-      "proteinsGoal":50.0,
+      "proteinsGoal":80.0,
       "fats":38.8,
       "fatsGoal":50.0,
       "alergens":[
