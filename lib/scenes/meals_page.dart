@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:invorecruitmenttask/constants/app_colors.dart';
 import 'package:invorecruitmenttask/constants/strings.dart';
 import 'package:invorecruitmenttask/models/models.dart';
@@ -20,10 +21,18 @@ class _MealsPageState extends State<MealsPage> {
 
   void incrementIndex(){
     int lenght = widget.macro.meals.length;
-    if(index < lenght){
+    if(index < lenght - 1){
       index++;
     } else {
-      print("No more meals");
+      Fluttertoast.showToast(
+          msg: Strings.noMoreMeals,
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.grey,
+          textColor: Colors.black,
+          fontSize: 16.0
+      );
     }
   }
 

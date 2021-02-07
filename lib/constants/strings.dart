@@ -7,5 +7,5 @@ class Strings {
   static const String fats = "Tłuszcze";
   static const String alergens = "Alergeny";
   static const String nextMeal = "Kolejny posiłek";
-
+  static const String noMoreMeals = "Nie ma więcej posiłków";
 }
