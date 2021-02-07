@@ -4,13 +4,15 @@ import 'package:invorecruitmenttask/bloc/simple_bloc_observer.dart';
 import 'package:invorecruitmenttask/repository/fake_api_client.dart';
 import 'package:invorecruitmenttask/repository/makro_repository.dart';
 
-import 'bloc/makro/makro_bloc.dart';
+import 'bloc/makro/macro_bloc.dart';
 import 'scenes/home_page.dart';
 
 void main() {
   Bloc.observer = SimpleBlocObserver();
   final MakroRepository makroRepository = MakroRepository(fakeApiClient: FakeApiClient());
-  runApp(MyApp(makroRepository: makroRepository));
+  runApp(
+      MyApp(makroRepository: makroRepository)
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: BlocProvider(
-        create: (context) => MakroBloc(makroRepository: makroRepository),
+        create: (context) => MacroBloc(makroRepository: makroRepository),
         child: HomePage(title: 'Task'),
       )
     );

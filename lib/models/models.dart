@@ -1,3 +1,3 @@
 export 'alergen.dart';
 export 'meal.dart';
-export 'makro.dart';
+export 'macro.dart';

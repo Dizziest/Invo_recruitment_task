@@ -30,6 +30,27 @@
           "image":"assets/images/milk.png"
         }
       ]
+    },
+    {
+      "title":"Obiad",
+      "name":"Łosoś i warzywa gotowane na parze",
+      "kcal":550,
+      "carbohydrates":51.7,
+      "carbohydratesGoal":200.0,
+      "proteins":43.3,
+      "proteinsGoal":80.0,
+      "fats":5.2,
+      "fatsGoal":50.0,
+      "alergens":[
+        {
+          "name":"Skorupiaki",
+          "image":"assets/images/crab.png"
+        },
+        {
+          "name":"Orzeszki ziemne",
+          "image":"assets/images/peanut.png"
+        }
+      ]
     }
   ]
 }

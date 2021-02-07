@@ -7,7 +7,7 @@ class MakroRepository{
 
   MakroRepository({@required this.fakeApiClient}) : assert(fakeApiClient != null);
 
-  Future<Makro> getMakro(){
+  Future<Macro> getMakro(){
     return fakeApiClient.getMakro();
   }
 }

@@ -9,10 +9,10 @@ class FakeApiClient{
     return await rootBundle.loadString('assets/MacroJSON.json');
   }
 
-  Future<Makro> getMakro() async {
+  Future<Macro> getMakro() async {
     String jsonString = await _loadJSONFromAssets();
     final makroJson = jsonDecode(jsonString);
-    return Makro.fromJson(makroJson);
+    return Macro.fromJson(makroJson);
   }
 
 }

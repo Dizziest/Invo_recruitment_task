@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 
-abstract class MakroEvent extends Equatable {
-  const MakroEvent();
+abstract class MacroEvent extends Equatable {
+  const MacroEvent();
 }
 
-class FetchMakroEvent extends MakroEvent {
+class FetchMacroEvent extends MacroEvent {
 
-  FetchMakroEvent();
+  FetchMacroEvent();
 
   @override
   List<Object> get props => [];

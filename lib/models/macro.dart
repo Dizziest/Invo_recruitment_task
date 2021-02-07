@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'meal.dart';
 
-class Makro extends Equatable{
+class Macro extends Equatable{
   final int id;
   final String date;
   final int kcalGoal;
@@ -12,13 +12,13 @@ class Makro extends Equatable{
   final double fatsGoal;
   final List<Meal> meals;
 
-  Makro(this.id ,this.date, this.kcalGoal, this.carbohydratesGoal, this.proteinsGoal,  this.fatsGoal, this.meals);
+  Macro(this.id ,this.date, this.kcalGoal, this.carbohydratesGoal, this.proteinsGoal,  this.fatsGoal, this.meals);
 
-  factory Makro.fromJson(Map<String, dynamic> json){
+  factory Macro.fromJson(Map<String, dynamic> json){
     var list = json['meals'] as List;
     List<Meal> mealsList = list.map((i) => Meal.fromJson(i)).toList();
 
-    return Makro(
+    return Macro(
         json['id'],
         json['date'],
         json['kcalGoal'],
