@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:invorecruitmenttask/constants/app_colors.dart';
 import 'package:invorecruitmenttask/constants/strings.dart';
 import 'package:invorecruitmenttask/models/models.dart';
+import 'package:invorecruitmenttask/widgets/nutrients_widget.dart';
 
 import 'alergens_list.dart';
 import 'linear_progress_bar_with_column.dart';
@@ -100,31 +101,13 @@ class _MealWidgetState extends State<MealWidget> {
           ),
         ),
         SizedBox(height: 45.0),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            LinearProgressBarWithColumn(
-                current: widget.meal.carbohydrates,
-                goal: widget.meal.carbohydratesGoal,
-                name: Strings.carbohydrates,
-                image: 'assets/images/starch.png',
-                progressColor: AppColors.carbohydratesProgressColor
-            ),
-            LinearProgressBarWithColumn(
-                current: widget.meal.proteins,
-                goal: widget.meal.proteinsGoal,
-                name: Strings.proteins,
-                image: 'assets/images/fish-2.png',
-                progressColor: AppColors.proteinsProgressColor
-            ),
-            LinearProgressBarWithColumn(
-                current: widget.meal.fats,
-                goal: widget.meal.fatsGoal,
-                name: Strings.fats,
-                image: 'assets/images/drop.png',
-                progressColor: AppColors.fatsProgressColor
-            ),
-          ],
+        NutrientsWidget(
+            carbohydrates: widget.meal.carbohydrates,
+            carbohydratesGoal: widget.meal.carbohydratesGoal,
+            proteins: widget.meal.proteins,
+            proteinsGoal: widget.meal.proteinsGoal,
+            fats: widget.meal.fats,
+            fatsGoal: widget.meal.fatsGoal
         ),
         SizedBox(height: 50.0),
         Row(

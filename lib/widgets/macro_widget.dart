@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:invorecruitmenttask/constants/app_colors.dart';
 import 'package:invorecruitmenttask/constants/strings.dart';
 import 'package:invorecruitmenttask/models/models.dart';
 import 'package:invorecruitmenttask/scenes/meals_page.dart';
 
 import 'circular_progress_bar.dart';
-import 'linear_progress_bar_with_column.dart';
 import 'nutrients_widget.dart';
 
 class MacroWidget extends StatefulWidget {

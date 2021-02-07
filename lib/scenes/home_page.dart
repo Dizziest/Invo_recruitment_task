@@ -4,6 +4,8 @@ import 'package:invorecruitmenttask/bloc/makro/bloc.dart';
 import 'package:invorecruitmenttask/constants/strings.dart';
 import 'package:invorecruitmenttask/widgets/macro_widget.dart';
 
+import '../constants/app_colors.dart';
+
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -19,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.greyBorder,
       body: BlocConsumer<MacroBloc, MacroState>(
         listener: (context, MacroState state){
           if (state is MacroLoaded){
