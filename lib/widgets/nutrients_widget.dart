@@ -31,21 +31,21 @@ class NutrientsWidget extends StatelessWidget {
             current: carbohydrates,
             goal: carbohydratesGoal,
             name: Strings.carbohydrates,
-            image: 'assets/images/starch.png',
+            image: 'assets/images/starch@2x.png',
             progressColor: AppColors.carbohydratesProgressColor
         ),
         LinearProgressBarWithColumn(
             current: proteins,
             goal: proteinsGoal,
             name: Strings.proteins,
-            image: 'assets/images/fish-2.png',
+            image: 'assets/images/fish-2@2x.png',
             progressColor: AppColors.proteinsProgressColor
         ),
         LinearProgressBarWithColumn(
             current: fats,
             goal: fatsGoal,
             name: Strings.fats,
-            image: 'assets/images/drop.png',
+            image: 'assets/images/drop@2x.png',
             progressColor: AppColors.fatsProgressColor
         ),
       ],

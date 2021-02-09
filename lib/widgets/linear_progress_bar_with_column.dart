@@ -32,7 +32,10 @@ class LinearProgressBarWithColumn extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.asset(image),
+        Image.asset(
+          image,
+          scale: 2,
+        ),
         SizedBox(height: 12.0),
         Text(
           name,

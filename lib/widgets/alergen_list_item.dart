@@ -35,7 +35,10 @@ class AlergenListItem extends StatelessWidget {
                   fontWeight: FontWeight.w400
               ),
             ),
-            Image.asset(alergen.image)
+            Image.asset(
+                alergen.image,
+                scale: 2.0
+            )
           ],
         ),
       ),

@@ -34,7 +34,11 @@ class _MealWidgetState extends State<MealWidget> {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Image.asset('assets/images/Group.png'),
+              child: Image.asset(
+                'assets/images/Group@2x.png',
+                height: 26.0,
+                width: 26.0,
+              ),
             ),
           ],
         ),
@@ -84,7 +88,11 @@ class _MealWidgetState extends State<MealWidget> {
                 padding: const EdgeInsets.all(22.0),
                 child: Column(
                   children: [
-                    Image.asset('assets/images/calories.png'),
+                    Image.asset(
+                      'assets/images/calories@2x.png',
+                      height: 16.0,
+                      width: 13.0,
+                    ),
                     SizedBox(height: 5.0),
                     Text(
                       '${widget.meal.kcal} kcal',

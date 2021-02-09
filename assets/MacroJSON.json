@@ -19,15 +19,15 @@
       "alergens":[
         {
           "name":"Skorupiaki",
-          "image":"assets/images/crab.png"
+          "image":"assets/images/crab@x2.png"
         },
         {
           "name":"Orzeszki ziemne",
-          "image":"assets/images/peanut.png"
+          "image":"assets/images/peanut@x2.png"
         },
         {
           "name":"Mleko",
-          "image":"assets/images/milk.png"
+          "image":"assets/images/milk@x2.png"
         }
       ]
     },
@@ -44,11 +44,11 @@
       "alergens":[
         {
           "name":"Skorupiaki",
-          "image":"assets/images/crab.png"
+          "image":"assets/images/crab@x2.png"
         },
         {
           "name":"Orzeszki ziemne",
-          "image":"assets/images/peanut.png"
+          "image":"assets/images/peanut@x2.png"
         }
       ]
     }
